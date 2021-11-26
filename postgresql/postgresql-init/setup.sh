@@ -1,5 +1,3 @@
 #!/bin/sh
 
-echo $PWD
-
-#psql library < ./setup.sql
+psql library < setup.sql
