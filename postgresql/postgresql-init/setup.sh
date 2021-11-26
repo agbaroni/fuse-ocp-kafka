@@ -1,3 +1,3 @@
 #!/bin/sh
 
-psql library < setup.sql
+psql library < ./setup.sql
