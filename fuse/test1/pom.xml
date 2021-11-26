@@ -32,6 +32,11 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <groupId>org.springframework.boot</groupId>
       </plugin>
+      <plugin>
+        <groupId>org.eclipse.jkube</groupId>
+        <artifactId>openshift-maven-plugin</artifactId> (4)
+        <version>1.5.1</version>
+      </plugin>
     </plugins>
   </build>
   <dependencies>
