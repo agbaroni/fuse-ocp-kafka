@@ -14,11 +14,22 @@
 	<artifactId>maven-compiler-plugin</artifactId>
 	<configuration>
 	  <encoding>UTF-8</encoding>
-	  <source>1.8</source>
-	  <target>1.8</target>
+	  <release>11</release>
 	</configuration>
 	<groupId>org.apache.maven.plugins</groupId>
 	<version>3.8.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+	    <manifest>
+              <mainClass>io.github.agbaroni.fuse.Main</mainClass>
+	    </manifest>
+          </archive>
+        </configuration>
       </plugin>
       <plugin>
 	<artifactId>maven-resources-plugin</artifactId>
@@ -33,8 +44,8 @@
         <groupId>org.springframework.boot</groupId>
       </plugin>
       <plugin>
+        <artifactId>openshift-maven-plugin</artifactId>
         <groupId>org.eclipse.jkube</groupId>
-        <artifactId>openshift-maven-plugin</artifactId> (4)
         <version>1.5.1</version>
       </plugin>
     </plugins>
