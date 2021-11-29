@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+  <route>
+    <from uri="timer:tmr1?delay=3000&amp;repeatCount=3" />
+    <setBody>
+      <simple>Hello world!!!</simple>
+    </setBody>
+    <to uri="log:io.github.agbaroni.fuse?level=INFO" />
+  </route>
+</routes>
