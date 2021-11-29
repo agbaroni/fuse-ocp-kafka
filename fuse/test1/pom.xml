@@ -41,7 +41,15 @@
       </plugin>
       <plugin>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <groupId>org.springframework.boot</groupId>
+	<executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+	<groupId>org.jboss.redhat-fuse</groupId>
+	<version>7.9.0.fuse-sb2-790065-redhat-00001</version>
       </plugin>
       <plugin>
         <artifactId>openshift-maven-plugin</artifactId>
@@ -55,13 +63,38 @@
       <artifactId>spring-boot-starter-web</artifactId>
       <groupId>org.springframework.boot</groupId>
     </dependency>
+    <dependency>
+      <artifactId>camel-spring-boot-starter</artifactId>
+      <groupId>org.apache.camel</groupId>
+    </dependency>
+    <!-- <dependency> -->
+    <!--   <artifactId>camel-activemq-starter</artifactId> -->
+    <!--   <groupId>org.apache.camel</groupId> -->
+    <!-- </dependency> -->
+    <dependency>
+      <artifactId>camel-kafka-starter</artifactId>
+      <groupId>org.apache.camel</groupId>
+    </dependency>
   </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>dev.snowdrop</groupId>
+        <artifactId>snowdrop-dependencies</artifactId>
+        <version>2.4.9.Final-redhat-00001</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-spring-boot-dependencies</artifactId>
+        <version>2.23.2.fuse-790054-redhat-00001</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <groupId>io.github.agbaroni.fuse-ocp-kafka.fuse</groupId>
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <groupId>org.springframework.boot</groupId>
-    <version>2.1.4.RELEASE-redhat-00001</version>
-  </parent>
   <version>0.1.0-SNAPSHOT</version>
 </project>
