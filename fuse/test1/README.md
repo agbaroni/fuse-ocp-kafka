@@ -3,7 +3,8 @@
 ## S2I Binary
 
 ```
-mvn clean package oc:deploy
+mvn package oc:build // to create an ImageStream
+mvn oc:resource oc:deploy // to deploy on OCP
 ```
 
 ## S2I Source
