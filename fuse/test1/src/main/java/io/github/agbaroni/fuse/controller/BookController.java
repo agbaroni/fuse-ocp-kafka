@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@RestController("/books")
 public class BookController {
 
     @Autowired
@@ -23,6 +23,15 @@ public class BookController {
 
         model.addAttribute("books", books);
 
-        return "showBooks";
+        StringBuilder builder = new StringBuilder();
+
+        books.forEach(book -> {
+            builder.append(book.toString());
+            builder.append(System.lineSeparator());
+        });
+
+        return builder.toString();
     }
+
+
 }

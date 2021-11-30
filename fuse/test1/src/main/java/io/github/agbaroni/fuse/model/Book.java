@@ -12,9 +12,12 @@ public class Book {
 
     private String title;
     @OneToOne
-    @JoinColumn(name = "author_isbn")
+    @JoinColumn(name = "PERSON")
     private Author person;
     private BigDecimal price;
+
+    public Book() {
+    }
 
 
     public Book(String ISBN, String title, Author author, BigDecimal price) {

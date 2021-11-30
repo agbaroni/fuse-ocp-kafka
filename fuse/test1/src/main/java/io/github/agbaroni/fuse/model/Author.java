@@ -8,11 +8,14 @@ import java.util.Objects;
 public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
     private String familyName;
+
+    public Author() {
+    }
 
     public Author(Long id, String name, String familyName) {
         this.id = id;
