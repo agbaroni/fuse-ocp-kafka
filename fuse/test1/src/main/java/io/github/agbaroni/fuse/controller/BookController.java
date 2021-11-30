@@ -6,19 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class BookController {
 
     @Autowired
-    private IBookService service;
+    private IBookService bookService;
 
     @GetMapping("/showBooks")
     public String findBooks(Model model) {
 
-        var books = (List<Book>) service.findAll();
+        var books = (List<Book>) bookService.findAll();
 
         model.addAttribute("books", books);
 
