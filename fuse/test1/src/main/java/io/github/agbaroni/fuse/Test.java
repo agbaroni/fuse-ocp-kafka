@@ -1,13 +1,12 @@
 package io.github.agbaroni.fuse;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+// import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
+// @RestController
 public class Test {
 
-    @RequestMapping("/")
+    // @RequestMapping("/")
     public String home() {
         return "Ciao!";
     }

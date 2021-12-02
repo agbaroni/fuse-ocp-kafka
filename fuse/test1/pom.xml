@@ -60,8 +60,8 @@
   </build>
   <dependencies>
     <dependency>
-      <artifactId>spring-boot-starter-web</artifactId>
-      <groupId>org.springframework.boot</groupId>
+      <artifactId>camel-base64-starter</artifactId>
+      <groupId>org.apache.camel</groupId>
     </dependency>
     <dependency>
       <artifactId>camel-spring-boot-starter</artifactId>
@@ -70,6 +70,18 @@
     <dependency>
       <artifactId>camel-kafka-starter</artifactId>
       <groupId>org.apache.camel</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>camel-groovy-starter</artifactId>
+      <groupId>org.apache.camel</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>activemq-camel</artifactId>
+      <groupId>org.apache.activemq</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>activemq-pool</artifactId>
+      <groupId>org.apache.activemq</groupId>
     </dependency>
   </dependencies>
   <dependencyManagement>

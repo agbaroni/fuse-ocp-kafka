@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <routes xmlns="http://camel.apache.org/schema/spring">
   <route>
-    <from uri="timer:tmr1?delay=3000&amp;repeatCount=3" />
-    <setBody>
-      <simple>Hello world!!!</simple>
-    </setBody>
-    <bean ref="myBean1" method="invoke1" />
+    <from uri="kafka:test1" />
+    <marshal>
+      <base64 />
+    </marshal>
     <to uri="log:test?level=INFO" />
-    <bean ref="myBean1" method="invoke2" />
-    <to uri="log:test?level=INFO" />
+  </route>
+  <route>
+    <from uri="kafka:test2" />
+    <choice>
+      <when>
+	<simple>${body} == 'ciao'</simple>
+	<to uri="log:branch1?level=INFO" />
+      </when>
+      <when>
+	<simple>${body} == 'mondo'</simple>
+	<setBody>
+	  <constant>Ciao!</constant>
+	</setBody>
+	<to uri="kafka:test1" />
+      </when>
+      <otherwise>
+	<to uri="log:branch2?level=INFO" />
+      </otherwise>
+    </choice>
+  </route>
+  <route>
+    <from uri="kafka:test3" />
+    <loop>
+      <constant>5</constant>
+      <setBody>
+	<simple>${body}${body}</simple>
+      </setBody>
+      <to uri="log:loops" />
+    </loop>
   </route>
 </routes>
