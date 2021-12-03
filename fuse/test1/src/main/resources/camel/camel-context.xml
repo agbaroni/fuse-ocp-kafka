@@ -36,4 +36,8 @@
       <to uri="log:loops" />
     </loop>
   </route>
+  <route>
+    <from uri="rest:post:hello" />
+    <to uri="log:apis" />
+  </route>
 </routes>

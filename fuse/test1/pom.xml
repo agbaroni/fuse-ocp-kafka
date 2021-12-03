@@ -60,6 +60,10 @@
   </build>
   <dependencies>
     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
       <artifactId>camel-base64-starter</artifactId>
       <groupId>org.apache.camel</groupId>
     </dependency>
@@ -73,6 +77,10 @@
     </dependency>
     <dependency>
       <artifactId>camel-groovy-starter</artifactId>
+      <groupId>org.apache.camel</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>camel-servlet-starter</artifactId>
       <groupId>org.apache.camel</groupId>
     </dependency>
     <dependency>
